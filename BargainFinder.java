@@ -21,6 +21,8 @@ public class BargainFinder {
     
     public ArrayList<String> shoppingList() {
     	//Implement me :)
+    	
+    	
     	return null;
     }
 

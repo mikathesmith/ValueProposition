@@ -1,0 +1,4 @@
+pen 1
+bottle 1
+book 2
+fish 5

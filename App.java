@@ -28,6 +28,7 @@ public class App {
             System.out.println(item + " " + cost);
         }
         System.out.println();
+        
         Scanner customerReader = new Scanner(new File(args[1]));
         HashMap<String, Integer> customerData = new HashMap<>();
         while (customerReader.hasNextLine()) {
@@ -41,13 +42,11 @@ public class App {
         SiteInfo site = new SimpleSite(siteData);
         CustomerInfo customer = new Customer(customerData);
         
-         ArrayList<String> items = new ArrayList<>();
+        ArrayList<String> items = new ArrayList<>();
         items.add("Cat");
         System.out.println(items + " " + site.getCost(items));
         items.add("Frog");
         System.out.println(items + " " + site.getCost(items));
-        
-       
         
         BargainFinder bf = new BargainFinder(site, customer, 3);
         for(String s: bf.shoppingList()) System.out.println(s);
