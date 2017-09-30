@@ -1,6 +1,6 @@
 run: build
 	@echo Running...
-	@cd src && java value.App ../customerdata.txt < ../sitedata.txt
+	@cd src && java value.App ../customerdata.txt ../sitedata.txt
 .PHONY: run
 
 build:
