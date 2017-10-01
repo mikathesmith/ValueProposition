@@ -19,9 +19,7 @@ public class SimpleSite implements SiteInfo {
     @Override
     public int getCost(ArrayList<String> items) {
         int totalCost = 0;
-        System.out.println(cost);
         for(String item: items) {
-            System.out.println(item);
             totalCost += cost.get(item);
         }
         return totalCost;
