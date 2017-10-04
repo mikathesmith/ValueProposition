@@ -47,7 +47,7 @@ public class BargainFinder {
             nextArray.addAll(next);
             if (site.getCost(nextArray) > budget) continue;
 
-            int gain = 0 - site.getCost(nextArray);
+            int gain = 0;
             for (String i : nextArray) {
                 gain += customer.getValue(i);
             }
