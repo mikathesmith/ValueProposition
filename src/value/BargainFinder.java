@@ -58,10 +58,11 @@ public class BargainFinder {
 
             ArrayList<String> newItemsLeft = new ArrayList<String>();
             for (String itemLeft : itemsLeft) {
-                if (!itemLeft.equals(item)) newItemsLeft.add(item);
+                if (!itemLeft.equals(item)) newItemsLeft.add(itemLeft);
             }
 
             Pair<HashSet<String>, Integer> deeper = findBestItems(new Pair<HashSet<String>, Integer>(next, gain), newItemsLeft, seen);
+
             max = deeper.getValue() > max.getValue() ? deeper : max;
         }
 
