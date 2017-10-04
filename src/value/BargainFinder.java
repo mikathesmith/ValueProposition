@@ -1,3 +1,7 @@
+/**
+ * @author Kimberley Louw, Matthew Boyes, Mika Smith, Nathan Hardy
+ */
+
 package value;
 
 import java.util.ArrayList;
