@@ -13,7 +13,6 @@ import java.util.List;
  * @author MichaelAlbert
  */
 public class BargainFinder {
-
     private SiteInfo site;
     private CustomerInfo customer;
     private int budget;
@@ -30,18 +29,20 @@ public class BargainFinder {
 
     private Pair<ArrayList<String>, Integer> findBestItems(List<String> items, int budget, Pair<ArrayList<String>, Integer> partial) {
         Pair<ArrayList<String>, Integer> max = partial;
+
         for (int i = 0; i < items.size(); i++) {
             String item = items.get(i);
             ArrayList<String> tmp = new ArrayList<>();
             tmp.addAll(partial.getKey());
             tmp.add(item);
 
-            if (site.getCost(tmp) > budget) return partial;
+            if (site.getCost(tmp) > budget) continue;
 
             Pair<ArrayList<String>, Integer> deeper = findBestItems(
                 items.subList(i + 1, items.size()), budget,
                 new Pair<ArrayList<String>, Integer>(tmp, partial.getValue() + customer.getValue(item))
             );
+
             if (deeper.getValue() > max.getValue()) max = deeper;
         }
 
@@ -65,5 +66,4 @@ public class BargainFinder {
             return value;
         }
     }
-
 }
